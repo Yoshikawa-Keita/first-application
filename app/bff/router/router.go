@@ -1,9 +1,9 @@
 package router
 
 import (
+	"github.com/Yoshikawa-Keita/first-application/app/bff/handler"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
-	"yoshikawa-keita-first-application/app/bff/handler"
 )
 
 func NewRouter() *echo.Echo {

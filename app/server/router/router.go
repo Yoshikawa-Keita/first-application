@@ -1,9 +1,9 @@
 package router
 
 import (
+	serverHandler "github.com/Yoshikawa-Keita/first-application/app/server/handler"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
-	serverHandler "yoshikawa-keita-first-application/app/server/handler"
 )
 
 func NewRouter() *echo.Echo {

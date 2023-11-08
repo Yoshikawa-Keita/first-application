@@ -4,12 +4,12 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"github.com/Yoshikawa-Keita/first-application/app/bff/util"
 	"github.com/labstack/echo/v4"
 	"github.com/rs/zerolog/log"
 	"io/ioutil"
 	"net/http"
 	"time"
-	"yoshikawa-keita-first-application/app/bff/util"
 )
 
 type FizzBuzzRequest struct {

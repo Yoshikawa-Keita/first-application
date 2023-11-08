@@ -1,11 +1,11 @@
 package main
 
 import (
+	"github.com/Yoshikawa-Keita/first-application/app/bff/router"
+	"github.com/Yoshikawa-Keita/first-application/app/bff/util"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 	"os"
-	"yoshikawa-keita-first-application/app/bff/router"
-	"yoshikawa-keita-first-application/app/bff/util"
 )
 
 func main() {

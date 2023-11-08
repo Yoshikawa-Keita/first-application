@@ -3,11 +3,11 @@
 package main
 
 import (
+	"github.com/Yoshikawa-Keita/first-application/app/server/router"
+	"github.com/Yoshikawa-Keita/first-application/app/server/util"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 	"os"
-	"yoshikawa-keita-first-application/app/server/router"
-	"yoshikawa-keita-first-application/app/server/util"
 )
 
 func main() {
