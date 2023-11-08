@@ -4,11 +4,10 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/Yoshikawa-Keita/first-application/app/bff/util"
 	"github.com/labstack/echo/v4"
-	"github.com/rs/zerolog/log"
 	"io/ioutil"
 	"net/http"
+	"os"
 	"time"
 )
 
@@ -29,11 +28,9 @@ func Hello(c echo.Context) error {
 
 	unixTime := time.Now().Unix()
 	reqBody, _ := json.Marshal(FizzBuzzRequest{UnixTime: unixTime})
-	config, err := util.LoadConfig(".")
-	if err != nil {
-		log.Fatal().Err(err).Msg("cannot load configuration")
-	}
-	res, err := http.Post(config.ServerServiceUrl+"/fizzbuzz", "application/json", bytes.NewBuffer(reqBody))
+
+	serverServiceURL := os.Getenv("SERVER_SERVICE_URL")
+	res, err := http.Post(serverServiceURL+"/fizzbuzz", "application/json", bytes.NewBuffer(reqBody))
 	//res, err := http.Post(os.Getenv("SERVER_SERVICE_URL")+"/fizzbuzz", "application/json", bytes.NewBuffer(reqBody))
 	if err != nil {
 		return c.JSON(http.StatusInternalServerError, map[string]string{"error": err.Error()})
