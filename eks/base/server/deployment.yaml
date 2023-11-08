@@ -18,3 +18,4 @@ spec:
       containers:
         - name: server
           image: 692138114203.dkr.ecr.ap-northeast-1.amazonaws.com/first-app-server:latest
+          imagePullPolicy: Always
