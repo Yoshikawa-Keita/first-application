@@ -39,7 +39,7 @@ jobs:
           REPOSITORY: first-app-bff
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG -t $REGISTRY/$REPOSITORY:latest .
+          docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG -t $REGISTRY/$REPOSITORY:latest ./app/bff
           docker push -a $REGISTRY/$REPOSITORY
 
       - name: Build, tag, and push server image to Amazon ECR
@@ -48,7 +48,7 @@ jobs:
           REPOSITORY: first-app-server
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG -t $REGISTRY/$REPOSITORY:latest .
+          docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG -t $REGISTRY/$REPOSITORY:latest ./app/server
           docker push -a $REGISTRY/$REPOSITORY
 
 #      - name: Update kube config
