@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bff-deployment
+  labels:
+    app: bff
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: bff
+  template:
+    metadata:
+      labels:
+        app: bff
+    spec:
+      containers:
+        - name: bff
+          image: # TODO
+          env:
+            - name: PORT
+              value: "8080"
+            - name: SERVER_SERVICE_URL
+              value: "http://server-service.dev-server:8080"
+          ports:
+            - containerPort: 8080
