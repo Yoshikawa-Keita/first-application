@@ -1,6 +1,6 @@
 module github.com/Yoshikawa-Keita/first-application/app/server
 
-go 1.21.3
+go 1.21
 
 require (
 	github.com/labstack/echo/v4 v4.11.3
