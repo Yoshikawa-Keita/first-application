@@ -5,9 +5,9 @@ import (
 )
 
 type Config struct {
-	Environment    string `mapstructure:"ENVIRONMENT"`
-	HTTPServerURL  string `mapstructure:"HTTP_SERVER_URL"`
-	HTTPBFFAddress string `mapstructure:"HTTP_BFF_ADDRESS"`
+	Environment      string `mapstructure:"ENVIRONMENT"`
+	ServerServiceUrl string `mapstructure:"SERVER_SERVICE_URL"`
+	HTTPBFFAddress   string `mapstructure:"HTTP_BFF_ADDRESS"`
 }
 
 func LoadConfig(path string) (config Config, err error) {

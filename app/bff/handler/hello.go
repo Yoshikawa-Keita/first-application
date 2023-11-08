@@ -33,7 +33,8 @@ func Hello(c echo.Context) error {
 	if err != nil {
 		log.Fatal().Err(err).Msg("cannot load configuration")
 	}
-	res, err := http.Post(config.HTTPServerURL+"/fizzbuzz", "application/json", bytes.NewBuffer(reqBody))
+	res, err := http.Post(config.ServerServiceUrl+"/fizzbuzz", "application/json", bytes.NewBuffer(reqBody))
+	//res, err := http.Post(os.Getenv("SERVER_SERVICE_URL")+"/fizzbuzz", "application/json", bytes.NewBuffer(reqBody))
 	if err != nil {
 		return c.JSON(http.StatusInternalServerError, map[string]string{"error": err.Error()})
 	}

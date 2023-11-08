@@ -1,7 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bff-deployment
+  name: bff
+  namespace: bff
   labels:
     app: bff
 spec:
@@ -16,11 +17,12 @@ spec:
     spec:
       containers:
         - name: bff
-          image: # TODO
+          image: 692138114203.dkr.ecr.ap-northeast-1.amazonaws.com/first-app-bff:latest
           env:
             - name: PORT
               value: "8080"
             - name: SERVER_SERVICE_URL
-              value: "http://server-service.dev-server:8080"
+              value: "http://dev-server-service.dev-server:8080"
+#              value: $(SERVER_SERVICE_URL)
           ports:
             - containerPort: 8080

@@ -9,7 +9,7 @@ import (
 func NewRouter() *echo.Echo {
 	e := echo.New()
 	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
-		AllowOrigins:     []string{"http://localhost:8081"},
+		AllowOrigins:     []string{"*"},
 		AllowHeaders:     []string{"*"},
 		AllowMethods:     []string{"GET", "PUT", "POST", "DELETE"},
 		AllowCredentials: true,

@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: server-deployment
+  namespace: server
   labels:
     app: server
 spec:
@@ -16,4 +17,4 @@ spec:
     spec:
       containers:
         - name: server
-          image: # TODO
+          image: 692138114203.dkr.ecr.ap-northeast-1.amazonaws.com/first-app-server:latest
