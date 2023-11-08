@@ -56,5 +56,5 @@ jobs:
 
       - name: Deploy image to Amazon EKS
         run: |
-          kubectl apply -k eks/overlays/bff
-          kubectl apply -k eks/overlays/server
+          kubectl apply -k eks/overlays/dev/bff
+          kubectl apply -k eks/overlays/dev/server
